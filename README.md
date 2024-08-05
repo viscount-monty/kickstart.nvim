@@ -2,6 +2,11 @@
 
 ## Introduction
 
+### Quick Install Command (Ubuntu/WSL)
+```sh
+git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+```
+
 A starting point for Neovim that is:
 
 * Small
@@ -11,10 +16,6 @@ A starting point for Neovim that is:
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
 ## Installation
-### Quick Install Command (Ubuntu/WSL)
-  ```sh
-  git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-  ```
 ### Install Neovim
 
 Kickstart.nvim targets *only* the latest
