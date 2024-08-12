@@ -13,6 +13,7 @@ git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOM
   - `<leader>la` to toggle absolute line numbers
   - `<leader>lr` to toggle relative line numbers
 - Added Markdown Preview plugin `iamcco/markdown-preivew.nvim`
+  - Currently requires `:Lazy build markdown-preview.nvim` after first install
 - Added list of additions by `viscount-monty` to `README.md`
 
 ## Introduction
