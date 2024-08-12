@@ -1,12 +1,21 @@
 # kickstart.nvim
 
-## Introduction
-
 ### Quick Install Command (Ubuntu/WSL)
 ```sh
 git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
+### Additions by `viscount-monty`
+- Added quick install command to `README.md`
+- Added git plugin `tpope/fugitive`
+- Uncommented `vim.g.have_nerd_font = true`
+- Added keymaps for line numbering
+  - `<leader>la` to toggle absolute line numbers
+  - `<leader>lr` to toggle relative line numbers
+- Added Markdown Preview plugin `iamcco/markdown-preivew.nvim`
+- Added list of additions by `viscount-monty` to `README.md`
+
+## Introduction
 A starting point for Neovim that is:
 
 * Small
