@@ -194,6 +194,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>la', '<cmd>set number!<CR>')
 vim.keymap.set('n', '<leader>lr', '<cmd>set relativenumber!<CR>')
 
+-- Add keymap for :MarkdownPreviewToggle
+vim.keymap.set('n', '<leader>m', '<cmd>MarkdownPreviewToggle<CR>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
