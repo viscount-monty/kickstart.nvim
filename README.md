@@ -16,6 +16,12 @@ git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOM
   - Currently requires `:Lazy build markdown-preview.nvim` after first install
   - Mapped `:MarkdownPreviewToggle` to `<leader>m`
 - Added list of additions by `viscount-monty` to `README.md`
+- Mouse disabled by default
+  ```lua
+  -- Enable mouse mode, can be useful for resizing splits for example!
+  -- vim.opt.mouse = 'a'
+  vim.opt.mouse = ''
+  ```  
 
 ## Introduction
 A starting point for Neovim that is:
