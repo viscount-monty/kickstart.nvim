@@ -22,6 +22,8 @@ git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOM
   -- vim.opt.mouse = 'a'
   vim.opt.mouse = ''
   ```  
+- Added Tmux navigation plugin `alexghergh/nvim-tmux-navigation`
+  - `<leader>p[h,j,k,l]` to navigate panes
 
 ## Introduction
 A starting point for Neovim that is:
