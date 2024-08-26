@@ -2,7 +2,7 @@
 
 ### Quick Install Command (Ubuntu/WSL)
 ```sh
-git clone https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone -b viscount-monty-features https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 ### Additions by `viscount-monty`
