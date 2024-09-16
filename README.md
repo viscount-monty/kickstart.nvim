@@ -24,6 +24,8 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   ```  
 - Added Tmux navigation plugin `alexghergh/nvim-tmux-navigation`
   - `<leader>p[h,j,k,l]` to navigate panes
+- Added keymap to insert blank line
+  - `<leader>b` to insert blank line below current line
 
 ## Introduction
 A starting point for Neovim that is:

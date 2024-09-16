@@ -198,6 +198,9 @@ vim.keymap.set('n', '<leader>lr', '<cmd>set relativenumber!<CR>')
 -- Add keymap for :MarkdownPreviewToggle
 vim.keymap.set('n', '<leader>m', '<cmd>MarkdownPreviewToggle<CR>')
 
+-- Add keymap to insert blank line
+vim.keymap.set('n', '<leader>b', 'o<Esc>k')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
