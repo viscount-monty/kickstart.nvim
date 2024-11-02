@@ -158,6 +158,18 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Use Treesitter for folding
+-- These do not appear to work at all
+-- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
+
+-- These work, fold text shows number of lines folded and first line, but without syntax highlighting
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+-- Works, shows only syntax-highlighted first line, no line numbers
+vim.opt.foldtext = ''
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
