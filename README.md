@@ -1,11 +1,11 @@
 # kickstart.nvim
 
-### Quick Install Command (Ubuntu/WSL)
+## Quick Install Command (Ubuntu/WSL)
 ```sh
 git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
-### Additions by `viscount-monty`
+## Additions by viscount-monty
 - Added quick install command to `README.md`
 - Added git plugin `tpope/fugitive`
 - Uncommented `vim.g.have_nerd_font = true`
@@ -22,11 +22,15 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   -- Enable mouse mode, can be useful for resizing splits for example!
   -- vim.opt.mouse = 'a'
   vim.opt.mouse = ''
-  ```  
 - Added Tmux navigation plugin `alexghergh/nvim-tmux-navigation`
   - `<leader>p[h,j,k,l]` to navigate panes
 - Added keymap to insert blank line
   - `<leader>b` to insert blank line below current line
+- Set folding to use Treesitter
+  ```lua
+  -- Use Treesitter for folding
+  vim.opt.foldmethod = 'expr'
+  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 ## Introduction
 A starting point for Neovim that is:
