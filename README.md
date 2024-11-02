@@ -14,6 +14,7 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   - `<leader>lr` to toggle relative line numbers
 - Added Markdown Preview plugin `iamcco/markdown-preivew.nvim`
   - Currently requires `:Lazy build markdown-preview.nvim` after first install
+    - Possible solutions [here](https://github.com/iamcco/markdown-preview.nvim/issues/690#issuecomment-2425301834)
   - Mapped `:MarkdownPreviewToggle` to `<leader>m`
 - Added list of additions by `viscount-monty` to `README.md`
 - Mouse disabled by default
