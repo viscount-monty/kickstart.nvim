@@ -28,9 +28,12 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   - `<leader>b` to insert blank line below current line
 - Set folding to use Treesitter
   ```lua
-  -- Use Treesitter for folding
+  -- Fold text shows number of lines folded and first line, but without syntax highlighting
   vim.opt.foldmethod = 'expr'
   vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+  -- Shows only syntax-highlighted first line, no line numbers
+  vim.opt.foldtext = ''
 
 ## Introduction
 A starting point for Neovim that is:
