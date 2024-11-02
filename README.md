@@ -35,6 +35,9 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   -- Shows only syntax-highlighted first line, no line numbers
   vim.opt.foldtext = ''
 
+  -- Set what level of folds to be open by default
+  vim.opt.foldlevelstart = 1
+
 ## Introduction
 A starting point for Neovim that is:
 
