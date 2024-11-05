@@ -891,17 +891,51 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    -- init = function()
+    --   -- Load the colorscheme here.
+    --   -- Like many other themes, this one has different styles, and you could load
+    --   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+    --   vim.cmd.colorscheme 'tokyonight-night'
+    --
+    --   -- You can configure highlights by doing something like:
+    --   vim.cmd.hi 'Comment gui=none'
+    -- end,
+  },
 
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+  {
+    'EdenEast/nightfox.nvim',
+    priority = 1000,
+    init = function()
+      -- Define custom highlight groups for each markdown heading level
+      vim.api.nvim_set_hl(0, '@markdown.heading.1', { fg = '#7aa89f', bold = true })
+      vim.api.nvim_set_hl(0, '@markdown.heading.2', { fg = '#ffc894', bold = true })
+      vim.api.nvim_set_hl(0, '@markdown.heading.3', { fg = '#ffa066', bold = true })
+      vim.api.nvim_set_hl(0, '@markdown.heading.4', { fg = '#e46876', bold = true })
+      vim.api.nvim_set_hl(0, '@markdown.heading.5', { fg = '#938aa9', bold = true })
+      vim.api.nvim_set_hl(0, '@markdown.heading.6', { fg = '#975fb8', bold = true })
+
+      -- Link the custom highlight groups to Treesitter's markdown heading captures
+      vim.api.nvim_set_hl(0, '@markup.heading.1.markdown', { link = '@markdown.heading.1' })
+      vim.api.nvim_set_hl(0, '@markup.heading.2.markdown', { link = '@markdown.heading.2' })
+      vim.api.nvim_set_hl(0, '@markup.heading.3.markdown', { link = '@markdown.heading.3' })
+      vim.api.nvim_set_hl(0, '@markup.heading.4.markdown', { link = '@markdown.heading.4' })
+      vim.api.nvim_set_hl(0, '@markup.heading.5.markdown', { link = '@markdown.heading.5' })
+      vim.api.nvim_set_hl(0, '@markup.heading.6.markdown', { link = '@markdown.heading.6' })
+
+      vim.cmd.colorscheme 'carbonfox'
     end,
   },
+
+  -- {
+  --   'MeanderingProgrammer/render-markdown.nvim',
+  --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+  --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+  --   dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+  --   ---@module 'render-markdown'
+  --   -- ---@type render.md.UserConfig
+  --   opts = {},
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
