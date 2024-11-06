@@ -65,3 +65,6 @@ for key, hl_group in pairs(hl_groups) do
     -- print('  italic: ', hl_group.italic)
   end
 end
+
+-- Set code block colour to same as inline code
+vim.api.nvim_set_hl(0, '@markup.raw.block.markdown', { link = '@markup.raw' })
