@@ -170,6 +170,9 @@ vim.opt.foldtext = ''
 -- Set what level of folds to be open by default
 vim.opt.foldlevelstart = 1
 
+-- Don't resize windows automatically when using :split
+vim.opt.equalalways = false
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 

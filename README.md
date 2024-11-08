@@ -58,6 +58,12 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
     vim.api.nvim_set_hl(0, '@markup.heading.4.markdown', { link = '@markdown.heading.4' })
     vim.api.nvim_set_hl(0, '@markup.heading.5.markdown', { link = '@markdown.heading.5' })
     vim.api.nvim_set_hl(0, '@markup.heading.6.markdown', { link = '@markdown.heading.6' })
+- Set window split mode to reduce size of current window and leave other windows unaffected
+  - In `init.lua` include the line
+    ```lua
+    -- Don't resize windows automatically when using :split
+    vim.opt.equalalways = false
+
 
 ## Introduction
 A starting point for Neovim that is:
