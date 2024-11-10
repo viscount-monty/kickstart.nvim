@@ -323,6 +323,15 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>pl', nvim_tmux_nav.NvimTmuxNavigateRight, { desc = 'Right' })
     end,
   },
+
+  {
+    'nvim-plugin-hello-world',
+    dir = '~/github/nvim-plugin-hello-world',
+    config = function()
+      require('nvim-plugin-hello-world').setup()
+    end,
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
