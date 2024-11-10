@@ -213,7 +213,7 @@ vim.keymap.set('n', '<leader>lr', '<cmd>set relativenumber!<CR>')
 -- Add keymap for :MarkdownPreviewToggle
 vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle markdown [p]review in browser' })
 -- Apply markdown table formatting to selection
-vim.keymap.set('x', '<leader>mt', "<cmd>'<,'>! tr -s \" \" | column -t -s '|' -o '|'<CR>", { desc = 'Format markdown [t]able' })
+-- vim.keymap.set('x', '<leader>mt', "<cmd>'<,'>! tr -s \" \" | column -t -s '|' -o '|'<CR>", { desc = 'Format markdown [t]able' })
 
 -- Add keymap to insert blank line
 vim.keymap.set('n', '<leader>b', 'o<Esc>k')
