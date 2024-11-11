@@ -327,11 +327,18 @@ require('lazy').setup({
     end,
   },
 
+  -- { -- Test plugin
+  --   'nvim-plugin-hello-world',
+  --   dir = '~/github/nvim-plugin-hello-world',
+  --   config = function()
+  --     require('nvim-plugin-hello-world').setup()
+  --   end,
+  -- },
   {
-    'nvim-plugin-hello-world',
-    dir = '~/github/nvim-plugin-hello-world',
+    'markdown-table-format',
+    dir = '~/github/markdown-table-format.nvim',
     config = function()
-      require('nvim-plugin-hello-world').setup()
+      require('markdown-table-format').setup()
     end,
   },
 
@@ -911,16 +918,16 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-    end,
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    -- init = function()
+    --   -- Load the colorscheme here.
+    --   -- Like many other themes, this one has different styles, and you could load
+    --   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+    --   vim.cmd.colorscheme 'tokyonight-night'
+    --
+    --   -- You can configure highlights by doing something like:
+    --   vim.cmd.hi 'Comment gui=none'
+    -- end,
     -- opts = {
     --   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     --   on_colors = function(colors)
@@ -933,7 +940,19 @@ require('lazy').setup({
     -- },
   },
   -- This is a great starting point for a dark and blue themed colour scheme. Lacks multicolour markdown headings
-  { 'fcpg/vim-orbital' },
+  {
+    'fcpg/vim-orbital',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    init = function()
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.cmd.colorscheme 'orbital'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
 
   -- {
   --   'EdenEast/nightfox.nvim',
