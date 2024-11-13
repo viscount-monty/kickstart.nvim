@@ -298,6 +298,15 @@ require('lazy').setup({
     end,
   },
 
+  -- Install collection of markdown tools
+  {
+    'tadmccorkle/markdown.nvim',
+    ft = 'markdown', -- or 'event = "VeryLazy"'
+    opts = {
+      -- configuration here or empty for defaults
+    },
+  },
+
   -- Install tmux navigation plugin
   {
     'alexghergh/nvim-tmux-navigation',
