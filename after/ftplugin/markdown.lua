@@ -1,6 +1,5 @@
 -- Run this file when a markdown file is opened
 
-
 -- Add keymap for :MarkdownPreviewToggle
 vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle markdown [p]review in browser' })
 
