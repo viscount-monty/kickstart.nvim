@@ -226,6 +226,9 @@ vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write
 -- Add keymap to 'sync' (pull, then push) with remote repository
 vim.keymap.set('n', '<leader>gs', '<cmd>w|G pull|G push<CR>', { desc = 'Sync (pull, push) with remote repository' })
 
+-- Add keymap for 'Nerdy' to search NerdFont icons/glyphs
+vim.keymap.set('n', '<leader>si', '<cmd>Nerdy<CR>', { desc = 'Search NerdFont icons/glyphs'})
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -314,6 +317,17 @@ require('lazy').setup({
     opts = {
       -- configuration here or empty for defaults
     },
+  },
+
+  -- Install Nerdy, NerdFont glyph plugin
+  -- Lazy
+  {
+    '2kabhishek/nerdy.nvim',
+    dependencies = {
+      'stevearc/dressing.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    cmd = 'Nerdy',
   },
 
   -- Install tmux navigation plugin
@@ -418,7 +432,7 @@ require('lazy').setup({
       spec = {
         { '<leader>c', group = 'code', mode = { 'n', 'x' } },
         { '<leader>d', group = 'Document' },
-        { '<leader>g', group = 'Git', mode = { 'n'} },
+        { '<leader>g', group = 'Git', mode = { 'n' } },
         { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
         { '<leader>m', group = 'Markdown tools', mode = { 'n', 'x' } },
         { '<leader>p', group = 'Tmux Pane' },
