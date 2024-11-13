@@ -217,7 +217,8 @@ vim.keymap.set('n', '<leader>lr', '<cmd>set relativenumber!<CR>')
 vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle markdown [p]review in browser' })
 
 -- Add keymap to insert blank line
-vim.keymap.set('n', '<leader>b', 'o<Esc>k')
+vim.keymap.set('n', '<leader>k', 'O<Esc>j', { desc = 'Inset blank line above' })
+vim.keymap.set('n', '<leader>j', 'o<Esc>k', { desc = 'Inset blank line below' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
