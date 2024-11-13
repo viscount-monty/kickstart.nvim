@@ -1,4 +1,9 @@
 -- Run this file when a markdown file is opened
+
+
+-- Add keymap for :MarkdownPreviewToggle
+vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle markdown [p]review in browser' })
+
 -- Define custom highlight groups for each markdown heading level
 -- vim.api.nvim_set_hl(0, '@markdown.heading.1', { fg = '#7aa89f', bold = true })
 -- vim.api.nvim_set_hl(0, '@markdown.heading.2', { fg = '#ffc894', bold = true })
