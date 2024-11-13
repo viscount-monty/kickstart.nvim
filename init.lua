@@ -292,10 +292,11 @@ require('lazy').setup({
   -- install markdown-preview.nvim without yarn or npm
   {
     'iamcco/markdown-preview.nvim',
+    -- event = "VeryLazy", -- This did not work
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
     build = function()
-      vim.cmd [[Lazy load markdown-preview.nvim]]
+      -- vim.opt.rtp:prepend(vim.fn.stdpath('data') .. '/lazy/markdown-preview.nvim')
       vim.fn['mkdp#util#install']()
     end,
   },
