@@ -220,6 +220,12 @@ vim.keymap.set('n', '<leader>j', 'o<Esc>k', { desc = 'Inset blank line below' })
 -- Add keymap to open terminal in split, enter insert mode
 vim.keymap.set('n', '<leader>$', '<cmd>sp term://bash<CR>i', { desc = 'Open terminal in split' })
 
+-- Add keymap to write then commit current buffer/file
+vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write/stage/Commit current buffer' })
+
+-- Add keymap to 'sync' (pull, then push) with remote repository
+vim.keymap.set('n', '<leader>gs', '<cmd>w|G pull|G push<CR>', { desc = 'Sync (pull, push) with remote repository' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -410,15 +416,16 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>p', group = 'Tmux [P]ane' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        { '<leader>m', group = '[M]arkdown tools', mode = { 'n', 'x' } },
+        { '<leader>c', group = 'code', mode = { 'n', 'x' } },
+        { '<leader>d', group = 'Document' },
+        { '<leader>g', group = 'Git', mode = { 'n'} },
+        { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
+        { '<leader>m', group = 'Markdown tools', mode = { 'n', 'x' } },
+        { '<leader>p', group = 'Tmux Pane' },
+        { '<leader>r', group = 'Rename' },
+        { '<leader>s', group = 'Search' },
+        { '<leader>t', group = 'Toggle' },
+        { '<leader>w', group = 'Workspace' },
       },
     },
   },
