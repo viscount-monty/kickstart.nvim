@@ -335,6 +335,7 @@ require('lazy').setup({
   -- },
   {
     'markdown-table-format',
+    ft = { 'markdown' },
     dir = '~/github/markdown-table-format.nvim',
     config = function()
       require('markdown-table-format').setup()
