@@ -1,5 +1,5 @@
 # kickstart.nvim
-
+Test text please remove
 ## Quick Install Command (Ubuntu/WSL)
 ```sh
 git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
