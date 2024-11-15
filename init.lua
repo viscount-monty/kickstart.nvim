@@ -225,6 +225,8 @@ vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write
 
 -- Add keymap to 'sync' (`pull`, then `push`, to avoid merge conflicts) with remote repository
 -- Added `stash` and `stash apply` either side of `pull` to avoid losing uncommitted changes
+-- Note that `git pull` does not appear to allow overwriting of changes by default, resulting in error message
+-- Rather than avoiding loss of changes, this method will simply avoid the error message
 -- Note that untracked files are not affected by `pull`
 vim.keymap.set('n', '<leader>gs', '<cmd>G stash|G pull|G push|G stash apply<CR>', { desc = 'Sync with remote repository (stash, pull, push, stash apply)' })
 
