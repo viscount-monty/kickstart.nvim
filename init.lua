@@ -223,8 +223,9 @@ vim.keymap.set('n', '<leader>$', '<cmd>sp term://bash<CR>i', { desc = 'Open term
 -- Add keymap to write then commit current buffer/file
 vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write/stage/Commit current buffer' })
 
--- Add keymap to 'sync' (pull, then push, to avoid merge conflicts) with remote repository
+-- Add keymap to 'sync' (`pull`, then `push`, to avoid merge conflicts) with remote repository
 -- Added `stash` and `stash apply` either side of `pull` to avoid losing uncommitted changes
+-- Note that untracked files are not affected by `pull`
 vim.keymap.set('n', '<leader>gs', '<cmd>G stash|G pull|G push|G stash apply<CR>', { desc = 'Sync with remote repository (stash, pull, push, stash apply)' })
 
 -- Add keymap for 'Nerdy' to search NerdFont icons/glyphs
