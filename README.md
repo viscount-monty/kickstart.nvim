@@ -1,5 +1,4 @@
 # kickstart.nvim
-Test text please remove
 ## Quick Install Command (Ubuntu/WSL)
 ```sh
 git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
@@ -65,7 +64,6 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
     ```lua
     -- Don't resize windows automatically when using :split
     vim.opt.equalalways = false
-
 
 ## Introduction
 A starting point for Neovim that is:
