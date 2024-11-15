@@ -24,17 +24,20 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
   vim.opt.mouse = ''
 - Added Tmux navigation plugin `alexghergh/nvim-tmux-navigation`
   - `<leader>p[h,j,k,l]` to navigate panes
-- Added keymap to insert blank line
-  - `<leader>b` to insert blank line below current line
+- Added keymaps
+  - `<leader>j` insert blank line below current line
+  - `<leader>k` insert blank line above current line
+  - `<leader>$` open terminal in split
+  - `<leader>gc` write buffer, git add, git commit
+  - `<leader>gs` git pull, git push
+  - `<leader>si` Search NerdFont icons/glyphs
 - Set folding to use Treesitter
   ```lua
   -- Fold text shows number of lines folded and first line, but without syntax highlighting
   vim.opt.foldmethod = 'expr'
   vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
   -- Shows only syntax-highlighted first line, no line numbers
   vim.opt.foldtext = ''
-
   -- Set what level of folds to be open by default
   vim.opt.foldlevelstart = 1
 - Added `EdenEast/nightfox.nvim` theme (but it does not use different colours for different markdown heading levels)
@@ -50,7 +53,6 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
     vim.api.nvim_set_hl(0, '@markdown.heading.4', { fg = '#e46876', bold = true })
     vim.api.nvim_set_hl(0, '@markdown.heading.5', { fg = '#938aa9', bold = true })
     vim.api.nvim_set_hl(0, '@markdown.heading.6', { fg = '#975fb8', bold = true })
-
     -- Link the custom highlight groups to Treesitter's markdown heading captures
     vim.api.nvim_set_hl(0, '@markup.heading.1.markdown', { link = '@markdown.heading.1' })
     vim.api.nvim_set_hl(0, '@markup.heading.2.markdown', { link = '@markdown.heading.2' })
