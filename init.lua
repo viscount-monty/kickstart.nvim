@@ -230,6 +230,9 @@ vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write
 -- Note that untracked files are not affected by `pull`
 vim.keymap.set('n', '<leader>gs', '<cmd>G stash|G pull|G push|G stash apply<CR>', { desc = 'Sync with remote repository (stash, pull, push, stash apply)' })
 
+-- Add keymap to upload current changes to remote repo (write, add, commit, then 'sync')
+vim.keymap.set('n', '<leader>gu', '<cmd>w|G add %|G commit|G stash|G pull|G push|G stash apply<CR>', { desc = 'Update remote repository (write, add, commit, sync)' })
+
 -- Add keymap for 'Nerdy' to search NerdFont icons/glyphs
 vim.keymap.set('n', '<leader>si', '<cmd>Nerdy<CR>', { desc = 'Search NerdFont icons/glyphs'})
 
@@ -302,7 +305,7 @@ require('lazy').setup({
     },
   },
 
-  -- install markdown-preview.nvim without yarn or npm
+  -- Install markdown-preview.nvim without yarn or npm
   {
     'iamcco/markdown-preview.nvim',
     -- event = "VeryLazy", -- This did not work
@@ -360,13 +363,16 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- Test plugin
+  -- Test plugin
+  -- {
   --   'nvim-plugin-hello-world',
   --   dir = '~/github/nvim-plugin-hello-world',
   --   config = function()
   --     require('nvim-plugin-hello-world').setup()
   --   end,
   -- },
+
+  -- Install local markdown table format plugin
   {
     'markdown-table-format',
     ft = { 'markdown' },
@@ -374,6 +380,12 @@ require('lazy').setup({
     config = function()
       require('markdown-table-format').setup()
     end,
+  },
+
+  -- Install micropython plugin
+  {
+    "jim-at-jibba/micropython.nvim",
+    dependencies = { "akinsho/toggleterm.nvim", "stevearc/dressing.nvim" },
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
