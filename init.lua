@@ -220,21 +220,61 @@ vim.keymap.set('n', '<leader>j', 'o<Esc>k', { desc = 'Inset blank line below' })
 -- Add keymap to open terminal in split, enter insert mode
 vim.keymap.set('n', '<leader>$', '<cmd>sp term://bash<CR>i', { desc = 'Open terminal in split' })
 
--- Add keymap to write then commit current buffer/file
-vim.keymap.set('n', '<leader>gc', '<cmd>w|G add %|G commit<CR>', { desc = 'Write/stage/Commit current buffer' })
+-- Add keymap to write then commit current buffer
+vim.keymap.set('n', '<leader>gc', function()
+  -- Configure dressing so that input window appears in centre of editor
+  require('dressing').setup {
+    input = {
+      relative = 'editor',
+    },
+  }
 
--- Add keymap to 'sync' (`pull`, then `push`, to avoid merge conflicts) with remote repository
+  -- Create floating window to enter commit message
+  vim.ui.input({
+    prompt = 'Enter commit message (Press ENTER while empty to cancel):',
+  }, function(commit_msg)
+    -- Exit if commit message empty
+    if commit_msg == '' then
+      return
+    end
+
+    -- Execute command
+    vim.cmd(string.format("w|G add %%|G commit -m '%s'", commit_msg))
+  end)
+end, { desc = 'Write/stage/commit current buffer' })
+
+-- Add keymap to 'sync' local repo (`pull`, then `push`, to avoid merge conflicts) with remote repo
 -- Added `stash` and `stash apply` either side of `pull` to avoid losing uncommitted changes
 -- Note that `git pull` does not appear to allow overwriting of changes by default, resulting in error message
 -- Rather than avoiding loss of changes, this method will simply avoid the error message
 -- Note that untracked files are not affected by `pull`
-vim.keymap.set('n', '<leader>gs', '<cmd>G stash|G pull|G push|G stash apply<CR>', { desc = 'Sync with remote repository (stash, pull, push, stash apply)' })
+vim.keymap.set('n', '<leader>gs', '<cmd>G stash|G pull|G push|G stash apply<CR>', { desc = 'Sync local with remote' })
 
--- Add keymap to upload current changes to remote repo (write, add, commit, then 'sync')
-vim.keymap.set('n', '<leader>gu', '<cmd>w|G add %|G commit|G stash|G pull|G push|G stash apply<CR>', { desc = 'Update remote repository (write, add, commit, sync)' })
+-- Add keymap to write, add, commit, then 'sync' current buffer
+vim.keymap.set('n', '<leader>gx', function()
+  -- Configure dressing so that input window appears in centre of editor
+  require('dressing').setup {
+    input = {
+      relative = 'editor',
+    },
+  }
+
+  -- Create floating window to enter commit message
+  vim.ui.input({
+    prompt = 'Enter commit message (Press ENTER while empty to cancel):',
+  }, function(commit_msg)
+    -- Exit if commit message empty
+    if commit_msg == '' then
+      return
+    end
+
+    -- Execute command
+    vim.cmd(string.format("w|G add %%|G commit -m '%s'|G stash|G pull|G push|G stash apply", commit_msg))
+  end)
+end, { desc = 'Write, add, commit current buffer, sync local with remote' })
 
 -- Add keymap for 'Nerdy' to search NerdFont icons/glyphs
-vim.keymap.set('n', '<leader>si', '<cmd>Nerdy<CR>', { desc = 'Search NerdFont icons/glyphs'})
+vim.keymap.set('n', '<leader>si', '<cmd>Nerdy<CR>', { desc = 'Search NerdFont icons/glyphs' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -380,12 +420,6 @@ require('lazy').setup({
     config = function()
       require('markdown-table-format').setup()
     end,
-  },
-
-  -- Install micropython plugin
-  {
-    "jim-at-jibba/micropython.nvim",
-    dependencies = { "akinsho/toggleterm.nvim", "stevearc/dressing.nvim" },
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -1093,7 +1127,7 @@ require('lazy').setup({
         'mermaid',
         'query',
         'vim',
-        'vimdoc'
+        'vimdoc',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
