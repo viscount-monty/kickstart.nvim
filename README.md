@@ -5,6 +5,26 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
 ```
 
 ## Additions by viscount-monty
+### To Do
+- [ ] Keymap for write, git add, git commit, git stash, git pull, git push, git stash apply - `<leader>gx`
+  - [x] Functional keymap
+  - [ ] Remove unnecessary `Press ENTER` prompts
+- [ ] Better autocomplete keymaps than `Ctrl+N`/`Ctrl+Y` etc
+- [ ] Cheatsheet for tab shortcuts [Documenation](https://neovim.io/doc/user/tabpage.html)
+- [ ] Markdown headline colours for themes, as per `folke/tokyonight.nvim`
+  - [ ] `projekt0n/github-nvim-theme`
+  - [ ] `EdenEast/nightfox.nvim carbonfox`
+- [ ] Resolve `WARNING vim.validate is deprecated. Feature will be removed in Nvim 1.0` in `:checkhealth`
+- [ ] Document `nvim-telescope/telescope.nvim` usage
+- [ ] Document `mini.surround` usage (adding `()`, `[]`, `{}`, `<>`, `''`, `""` etc to word, visual selection)
+- [ ] Micropython tools
+  - [ ] Upload scripts to Raspberry Pi Pico
+  - [ ] Download scripts from Raspberry Pi Pico 
+  - [ ] Access REPL of Raspberry Pi Pico
+  - [ ] Autocompletion for python
+  - [ ] [jim-at-jibba/micropython.nvim](https://github.com/jim-at-jibba/micropython.nvim)
+
+### Addition Notes
 - Added quick install command to `README.md`
 - Added git plugin `tpope/fugitive`
 - Uncommented `vim.g.have_nerd_font = true`
