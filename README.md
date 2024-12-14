@@ -16,9 +16,9 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
 - [ ] Resolve `WARNING vim.validate is deprecated. Feature will be removed in Nvim 1.0` in `:checkhealth`
 - [ ] Document `nvim-telescope/telescope.nvim` usage
 - [ ] Document `mini.surround` usage (adding `()`, `[]`, `{}`, `<>`, `''`, `""` etc to word, visual selection)
-- [ ] Python tools
-  - [ ] Linting
-  - [ ] Autocompletion
+- [x] Python tools
+  - [x] Linting
+  - [x] Autocompletion
 - [ ] Micropython tools
   - [ ] Upload scripts to Raspberry Pi Pico
   - [ ] Download scripts from Raspberry Pi Pico 
@@ -88,6 +88,15 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
     ```lua
     -- Don't resize windows automatically when using :split
     vim.opt.equalalways = false
+- Set up `pyright`, static type checker for Python
+  - Uncommented `pyright` for `neovim/nvim-lspconfig`
+    ```lua
+    pyright = {},
+  - Install `npm`
+    ```bash
+    sudo apt install npm
+  - Changed autocompletion mapping to `<Tab>`
+    - Uncommented relevant sections in `hrsh7th/nvim-cmp` config
 
 ## Introduction
 A starting point for Neovim that is:
