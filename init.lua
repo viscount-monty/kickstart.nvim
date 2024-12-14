@@ -422,6 +422,13 @@ require('lazy').setup({
     end,
   },
 
+  -- Install micropython plugin
+  {
+    'jim-at-jibba/micropython.nvim',
+    dependencies = { 'akinsho/toggleterm.nvim', 'stevearc/dressing.nvim' },
+    lazy = true,
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
