@@ -17,12 +17,17 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
 - [ ] Resolve `WARNING vim.validate is deprecated. Feature will be removed in Nvim 1.0` in `:checkhealth`
 - [ ] Document `nvim-telescope/telescope.nvim` usage
 - [ ] Document `mini.surround` usage (adding `()`, `[]`, `{}`, `<>`, `''`, `""` etc to word, visual selection)
+- [ ] Python tools
+  - [ ] Linting
+  - [ ] Autocompletion
 - [ ] Micropython tools
   - [ ] Upload scripts to Raspberry Pi Pico
   - [ ] Download scripts from Raspberry Pi Pico 
   - [ ] Access REPL of Raspberry Pi Pico
-  - [ ] Autocompletion for python
   - [ ] [jim-at-jibba/micropython.nvim](https://github.com/jim-at-jibba/micropython.nvim)
+- [ ] Move `neovim` related content from `viscount-monty/cli_cheatsheet` to this README
+- [ ] Confirm fix for `iamcco/markdown-preview.nvim`
+  - [Issue #690](https://github.com/iamcco/markdown-preview.nvim/issues/690#issuecomment-2540959855)
 
 ### Addition Notes
 - Added quick install command to `README.md`
