@@ -3,7 +3,6 @@
 ```sh
 git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
-
 ## Additions by viscount-monty
 ### To Do
 - [ ] Keymap for write, git add, git commit, git stash, git pull, git push, git stash apply - `<leader>gx`
