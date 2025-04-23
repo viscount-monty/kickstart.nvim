@@ -1194,7 +1194,7 @@ require('lazy').setup({
         'luadoc',
         'markdown',
         'markdown_inline',
-        'mermaid',
+        -- 'mermaid',
         'query',
         'vim',
         'vimdoc',
