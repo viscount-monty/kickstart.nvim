@@ -5,6 +5,7 @@ git clone -b viscount-monty_features https://github.com/viscount-monty/kickstart
 ```
 ## Additions by viscount-monty
 ### To Do
+- [ ] TOML syntax highlighting for fenced markdown code
 - [ ] Keymap for write, git add, git commit, git stash, git pull, git push, git stash apply - `<leader>gx`
   - [x] Functional keymap
   - [ ] Remove unnecessary `Press ENTER` prompts
