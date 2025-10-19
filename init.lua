@@ -431,6 +431,14 @@ require('lazy').setup({
     end,
   },
 
+  -- Install markdown Table of Contents generator
+  {
+    'richardbizik/nvim-toc',
+    config = function()
+      require('nvim-toc').setup({})
+    end,
+  },
+
   -- Install micropython plugin
   {
     'jim-at-jibba/micropython.nvim',
@@ -747,7 +755,7 @@ require('lazy').setup({
             end
           end
 
-          -- The following two autocommands are used to highlight references of the
+          -- The following two autocommands are used to highlight references of theini
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
           --
